@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-import { v4 as uuid } from "uuid";
 import { GlobalContxt } from "../../context/GlobalState";
 
 export const AddUser = () => {
@@ -16,7 +15,7 @@ export const AddUser = () => {
 
   const onSubmiteUser = () => {
     const newUser = {
-      id: uuid(),
+      id: 4,
       name,
     };
     addUser(newUser);

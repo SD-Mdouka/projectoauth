@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Navbar, Nav, NavItem, NavbarBrand, Container } from "reactstrap";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Navbar, Nav, NavItem, NavbarBrand, Container } from 'reactstrap';
 
 export const Heading = () => {
   return (
@@ -9,7 +9,7 @@ export const Heading = () => {
         <Nav>
           <NavbarBrand>My Team</NavbarBrand>
 
-          <NavItem style={{ marginLeft: "auto" }}>
+          <NavItem style={{ justifyItems: "left" }}>
             <Link className="btn btn-primary" to="/add">
               Add User
             </Link>

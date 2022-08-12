@@ -4,7 +4,11 @@ import AppReducer from "./AppReducer";
 // initile State default value
 
 const initileState = {
-  users: [],
+  users: [
+    { id: 1, name: "salah" },
+    { id: 2, name: "ahmed" },
+    { id: 3, name: "amin" },
+  ],
 };
 
 // context state

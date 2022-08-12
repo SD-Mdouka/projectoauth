@@ -15,13 +15,15 @@ export default (state, action) => {
 
       const updateUsers = state.users.map((user) => {
         if (user.id === updateUser.id) {
-          return updateUser;
+          return updateUsers;
         }
-        return user;
+        return {
+          users: updateUsers,
+        };
       });
 
       return {
-        users: updateUsers,
+        users: [action.data, ...state.users],
       };
     default:
       return state;

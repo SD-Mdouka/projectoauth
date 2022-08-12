@@ -13,7 +13,7 @@ export const UserLIst = () => {
           {users.map((user) => (
             <ListGroupItem key={user.id} style={{ display: "flex" }}>
               <strong>{user.name}</strong>
-              <div style={{ marginLeft: "auto" }}>
+              <div style={{ marginLeft: "auto", width: "100%" }}>
                 <Link className="btn btn-warning mx-3" to={`/edit/${user.id}`}>
                   Edit
                 </Link>

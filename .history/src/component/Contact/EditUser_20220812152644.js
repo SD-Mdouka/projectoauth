@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { v4 as uuid } from "uuid";
 import { GlobalContxt } from "../../context/GlobalState";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
@@ -9,7 +10,7 @@ export const EditUser = (props) => {
     name: "",
   });
 
-  const { users, editUsers } = useContext(GlobalContxt);
+  const { users, editUser } = useContext(GlobalContxt);
 
   const navigate = useNavigate();
 
@@ -17,15 +18,15 @@ export const EditUser = (props) => {
 
   useEffect(() => {
     const userId = currentUserId.id;
-    const selectedUser = users.find((user) => user.id === userId);
+    const selectedUser = users.find((user) => user.id === Number(userId));
     setSelectUser(selectedUser);
-  }, [currentUserId, users]);
+    console.log(selectedUser);
+  }, [currentUserId.id, users]);
   const onChangeName = (e) => {
-    setSelectUser({ ...selectedUser, [e.target.name]: e.target.value });
+    // setSelectUser({ ...selectUser, [e.target.name]: e.target.value });
   };
 
   const onSubmiteUser = () => {
-    editUsers(selectedUser);
     navigate("/");
   };
   return (
@@ -36,7 +37,6 @@ export const EditUser = (props) => {
           <Label>Name</Label>
           <Input
             type="text"
-            name="name"
             value={selectedUser.name}
             onChange={onChangeName}
             placeholder="Entre Name"

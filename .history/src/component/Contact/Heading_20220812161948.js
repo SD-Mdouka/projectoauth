@@ -9,7 +9,7 @@ export const Heading = () => {
         <Nav>
           <NavbarBrand>My Team</NavbarBrand>
 
-          <NavItem style={{ marginLeft: "auto" }}>
+          <NavItem style={{ justifyItems: "center" }}>
             <Link className="btn btn-primary" to="/add">
               Add User
             </Link>

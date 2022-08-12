@@ -19,6 +19,7 @@ export const EditUser = (props) => {
     const userId = currentUserId.id;
     const selectedUser = users.find((user) => user.id === userId);
     setSelectUser(selectedUser);
+    console.log(selectedUser);
   }, [currentUserId, users]);
   const onChangeName = (e) => {
     setSelectUser({ ...selectedUser, [e.target.name]: e.target.value });

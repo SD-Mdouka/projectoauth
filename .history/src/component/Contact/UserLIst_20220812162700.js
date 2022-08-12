@@ -11,9 +11,12 @@ export const UserLIst = () => {
       {users.length > 0 ? (
         <>
           {users.map((user) => (
-            <ListGroupItem key={user.id} style={{ display: "flex" }}>
+            <ListGroupItem
+              key={user.id}
+              style={{ display: "flex", width: "100%" }}
+            >
               <strong>{user.name}</strong>
-              <div style={{ marginLeft: "auto" }}>
+              <div style={{ marginLeft: "auto", width: "100%" }}>
                 <Link className="btn btn-warning mx-3" to={`/edit/${user.id}`}>
                   Edit
                 </Link>

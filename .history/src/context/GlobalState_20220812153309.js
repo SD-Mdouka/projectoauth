@@ -4,7 +4,11 @@ import AppReducer from "./AppReducer";
 // initile State default value
 
 const initileState = {
-  users: [],
+  users: [
+    { id: 1, name: "salah" },
+    { id: 2, name: "ahmed" },
+    { id: 3, name: "amin" },
+  ],
 };
 
 // context state
@@ -29,7 +33,7 @@ export const GlobalProvider = ({ children }) => {
       data: user,
     });
   };
-  const editUsers = (user) => {
+  const updateUsers = (user) => {
     dispatsh({
       type: "EDITUser",
       data: user,
@@ -42,7 +46,7 @@ export const GlobalProvider = ({ children }) => {
         users: state.users,
         removeUser,
         addUser,
-        editUsers,
+        updateUsers,
       }}
     >
       {children}

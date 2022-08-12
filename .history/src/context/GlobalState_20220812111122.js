@@ -1,10 +1,14 @@
-import React, { createContext, useReducer } from "react";
-import AppReducer from "./AppReducer";
+import React, { createContext, useReducer } from 'react';
+import AppReducer from './AppReducer';
 
 // initile State default value
 
 const initileState = {
-  users: [],
+  users: [
+    { id: 1, name: 'salah' },
+    { id: 2, name: 'ahmed' },
+    { id: 3, name: 'amin' },
+  ],
 };
 
 // context state
@@ -19,19 +23,13 @@ export const GlobalProvider = ({ children }) => {
   //   Action
   const removeUser = (id) => {
     dispatsh({
-      type: "REMOVEUser",
+      type: 'REMOVEUser',
       data: id,
     });
   };
   const addUser = (user) => {
     dispatsh({
-      type: "ADDUser",
-      data: user,
-    });
-  };
-  const editUsers = (user) => {
-    dispatsh({
-      type: "EDITUser",
+      type: 'ADDUser',
       data: user,
     });
   };
@@ -42,7 +40,6 @@ export const GlobalProvider = ({ children }) => {
         users: state.users,
         removeUser,
         addUser,
-        editUsers,
       }}
     >
       {children}

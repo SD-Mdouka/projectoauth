@@ -17,11 +17,13 @@ export default (state, action) => {
         if (user.id === updateUser.id) {
           return updateUser;
         }
-        return user;
+        return {
+          users: updateUsers,
+        };
       });
 
       return {
-        users: updateUsers,
+        users: [action.data, ...state.users],
       };
     default:
       return state;
