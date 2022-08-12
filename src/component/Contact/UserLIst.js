@@ -4,7 +4,7 @@ import { GlobalContxt } from '../../context/GlobalState';
 import { ListGroup, ListGroupItem, Button } from 'reactstrap';
 
 export const UserLIst = () => {
-  const { users } = useContext(GlobalContxt);
+  const { users, removeUser } = useContext(GlobalContxt);
 
   return (
     <ListGroup>
@@ -15,7 +15,9 @@ export const UserLIst = () => {
             <Link className='btn btn-warning mx-3' to={`/edit/${user.id}`}>
               Edit
             </Link>
-            <Button color='danger'>Delete</Button>
+            <Button onClick={() => removeUser(user.id)} color='danger'>
+              Delete
+            </Button>
           </div>
         </ListGroupItem>
       ))}

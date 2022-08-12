@@ -19,10 +19,27 @@ export const GlobalContxt = createContext(initileState);
 
 export const GlobalProvider = ({ children }) => {
   const [state, dispatsh] = useReducer(AppReducer, initileState);
+
+  //   Action
+  const removeUser = (id) => {
+    dispatsh({
+      type: 'REMOVEUser',
+      data: id,
+    });
+  };
+  const addUser = (user) => {
+    dispatsh({
+      type: 'ADDUser',
+      data: user,
+    });
+  };
+
   return (
     <GlobalContxt.Provider
       value={{
         users: state.users,
+        removeUser,
+        addUser,
       }}
     >
       {children}
